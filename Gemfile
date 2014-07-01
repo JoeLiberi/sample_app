@@ -38,11 +38,17 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-group :development do
+group :development, :test do
 	gem 'rspec-rails', '~> 3.0.1'
-	gem 'capybara', '2.3.0'
+	gem 'guard-rspec', '~> 4.2.10'
+	gem 'guard', '~>2.1'
+	gem 'growl'
+	gem 'spork-rails', '4.0.0'
+  	gem 'guard-spork', '1.5.0'
+  	gem 'childprocess', '0.3.6'
 end
 
 group :test do
 	gem 'rspec', '~> 3.0.0'
+	gem 'capybara', '2.3.0'
 end
