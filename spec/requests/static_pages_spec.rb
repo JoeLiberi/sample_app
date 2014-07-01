@@ -36,8 +36,26 @@ describe "Static pages" do
     end
 
     it "should have the right title" do
-    	visit 'static_pages/about'
+    	visit '/static_pages/about'
     	expect(page).to have_title("About Us")
+    end
+  end
+
+  describe "Contact" do
+
+    it "should have the content 'Contact'" do
+      visit '/static_pages/contact'
+      expect(page).to have_content('Contact Me')
+    end
+
+    it "should have the right title" do
+    	visit '/static_pages/contact'
+    	expect(page).to have_title("Contact Me")
+    end
+
+    it "should have a Email Me href" do
+    	visit '/static_pages/contact'
+    	expect(page).to find_link('Email Me', :href => 'mailto:m4punk@gmail.com?subject=Hi m4punk!')
     end
   end
 end
