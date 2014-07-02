@@ -43,6 +43,7 @@ group :development, :test do
 	gem 'guard-rspec', '~> 4.2.10'
 	gem 'guard', '~>2.1'
 	gem 'growl'
+	gem 'libnotify'
 	gem 'spork-rails', '4.0.0'
   	gem 'guard-spork', '1.5.0'
   	gem 'childprocess', '0.3.6'
