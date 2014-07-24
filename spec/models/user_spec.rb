@@ -84,9 +84,8 @@ describe User do
 
 		describe "with invalid password" do
 			let(:user_for_invalid_password) { found_user.authenticate("invalid") }
-			$stderr.puts user_for_invalid_password
 			it { should_not eq user_for_invalid_password }
-			specify { expect(user_for_invalid_password).to be_false }
+			specify { expect(user_for_invalid_password).to be_falsey }
 		end
 	end
 
@@ -104,4 +103,6 @@ describe User do
 			expect(@user.reload.email).to eq mixed_case_email.downcase
 		end
 	end
+
+	
 end
